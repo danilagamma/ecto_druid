@@ -40,6 +40,7 @@ defmodule Druid.Client do
       |> put_present(:plug, Keyword.get(opts, :plug))
       |> put_present(:adapter, Keyword.get(opts, :adapter))
       |> put_present(:finch, Keyword.get(opts, :finch))
+      |> put_present(:auth, Keyword.get(opts, :auth))
 
     response = Req.request!(request, request_opts)
 
