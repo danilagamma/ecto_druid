@@ -11,7 +11,7 @@ defmodule Ecto.Adapters.Druid.Types do
   def loaders(:complex, value), do: [:string, value]
   def loaders(type, value), do: [type, value]
 
-  def to_db(value) when is_integer(value), do: db("LONG", value)
+  def to_db(value) when is_integer(value), do: db("BIGINT", value)
   def to_db(value) when is_float(value), do: db("DOUBLE", value)
   def to_db(value) when is_binary(value), do: db("VARCHAR", value)
   def to_db(value) when is_boolean(value), do: db("BOOLEAN", value)
