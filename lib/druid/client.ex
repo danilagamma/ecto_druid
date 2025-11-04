@@ -41,6 +41,7 @@ defmodule Druid.Client do
       |> put_present(:adapter, Keyword.get(opts, :adapter))
       |> put_present(:finch, Keyword.get(opts, :finch))
       |> put_present(:auth, Keyword.get(opts, :auth))
+      |> put_present(:receive_timeout, Keyword.get(opts, :timeout))
 
     response = Req.request!(request, request_opts)
 
