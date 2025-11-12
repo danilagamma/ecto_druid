@@ -15,6 +15,7 @@ defmodule Ecto.Adapters.Druid.Types do
   def to_db(value) when is_float(value), do: db("DOUBLE", value)
   def to_db(value) when is_binary(value), do: db("VARCHAR", value)
   def to_db(value) when is_boolean(value), do: db("BOOLEAN", value)
+  def to_db(value) when is_list(value), do: db("ARRAY", value)
 
   defp db(type, value), do: %{type: type, value: value}
 end
